@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <title>猜数字游戏</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="contact-info">
-        Contact me 联系我: <a href="mailto:your-email@example.com">mail:wangkachen@hotmail.com +852 53730832(whatsup) (+86)13751037069(微信同号）</a>
+        联系方式: <a href="mailto:your-email@example.com">wangkachen@hotmail.com</a>
     </div>
-    <h1>Game</h1>
-    <div class="score">Score: <span id="score">0</span></div>
-    <div id="box" class="box"></div>
+    <h1>猜数字游戏</h1>
+    <div class="score">分数: <span id="score">0</span></div>
+    <div id="message"></div>
+    <input type="number" id="guess" placeholder="输入你的猜测">
+    <button id="submitGuess">提交猜测</button>
+    <button id="restart" style="display: none;">重新开始</button>
     <script src="script.js"></script>
 </body>
 </html>
