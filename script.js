@@ -1,4 +1,4 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1; // 生成 1 到 100 的随机数
+let randomNumber;
 let attempts = 10; // 最大尝试次数
 let score = 0;
 
@@ -8,6 +8,30 @@ const messageElement = document.getElementById('message');
 const guessInput = document.getElementById('guess');
 const submitGuessButton = document.getElementById('submitGuess');
 const restartButton = document.getElementById('restart');
+const startGameButton = document.getElementById('startGame');
+const minInput = document.getElementById('min');
+const maxInput = document.getElementById('max');
+const gameArea = document.getElementById('gameArea');
+
+// 开始游戏
+startGameButton.addEventListener('click', () => {
+    const min = parseInt(minInput.value);
+    const max = parseInt(maxInput.value);
+    
+    if (isNaN(min) || isNaN(max) || min >= max) {
+        alert('请输入有效的范围。最小值应小于最大值。');
+        return;
+    }
+    
+    randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; // 在指定范围内生成随机数
+    attempts = 10; // 重置尝试次数
+    messageElement.textContent = `猜测一个 ${min} 到 ${max} 之间的数字。`;
+    
+    minInput.style.display = 'none';
+    maxInput.style.display = 'none';
+    startGameButton.style.display = 'none';
+    gameArea.style.display = 'block';
+});
 
 // 提交猜测事件
 submitGuessButton.addEventListener('click', () => {
@@ -40,13 +64,13 @@ function toggleButtons() {
 
 // 重新开始游戏
 restartButton.addEventListener('click', () => {
-    randomNumber = Math.floor(Math.random() * 100) + 1;
-    attempts = 10;
+    minInput.value = '';
+    maxInput.value = '';
     messageElement.textContent = '';
     guessInput.value = '';
-    submitGuessButton.style.display = 'inline-block';
-    restartButton.style.display = 'none';
+    startGameButton.style.display = 'inline-block';
+    gameArea.style.display = 'none';
 });
 
-// 初始化游戏
+// 初始化游戏分数
 scoreElement.innerText = score;
