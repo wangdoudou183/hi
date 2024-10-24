@@ -15,10 +15,24 @@
     </div>
     <h1>猜数字游戏</h1>
     <div class="score">分数: <span id="score">0</span></div>
-    <div id="message"></div>
-    <input type="number" id="guess" placeholder="输入你的猜测">
-    <button id="submitGuess">提交猜测</button>
-    <button id="restart" style="display: none;">重新开始</button>
+    
+    <div>
+        <label for="min">最小值:</label>
+        <input type="number" id="min" placeholder="最小值">
+    </div>
+    <div>
+        <label for="max">最大值:</label>
+        <input type="number" id="max" placeholder="最大值">
+    </div>
+    <button id="startGame">开始游戏</button>
+
+    <div id="gameArea" style="display: none;">
+        <div id="message"></div>
+        <input type="number" id="guess" placeholder="输入你的猜测">
+        <button id="submitGuess">提交猜测</button>
+        <button id="restart" style="display: none;">重新开始</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
