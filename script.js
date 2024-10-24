@@ -24,7 +24,7 @@ startGameButton.addEventListener('click', () => {
     }
     
     randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; // 在指定范围内生成随机数
-    attempts = 10; // 重置尝试次数
+    attempts = 10; // 重置尝试
     messageElement.textContent = `猜测一个 ${min} 到 ${max} 之间的数字。`;
     
     minInput.style.display = 'none';
