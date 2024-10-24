@@ -93,4 +93,4 @@ document.addEventListener('keydown', (event) => {
 
 // 初始化游戏
 createFood();
-setInterval(gameLoop, 100); // 每100毫秒更新一次
+setInterval(gameLoop, 40); // 每100毫秒更新一次
